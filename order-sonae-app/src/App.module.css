@@ -1,0 +1,118 @@
+.appContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .header {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a365d;
+    margin: 0 0 16px 0;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+    color: #4a5568;
+  }
+  
+  .mainContent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+  
+  .productSection {
+    grid-column: span 12;
+    margin-bottom: 32px;
+  }
+  
+  .orderSection {
+    grid-column: span 12;
+    margin-bottom: 32px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .sectionTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 16px;
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 32px 0;
+  }
+  
+  /* Grid layouts for different screen sizes */
+  @media (min-width: 768px) {
+    .productSection {
+      grid-column: span 6;
+    }
+    
+    .orderSection {
+      grid-column: span 6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .productSection {
+      grid-column: span 4;
+    }
+    
+    .orderSection {
+      grid-column: span 8;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .appContainer {
+      padding: 16px;
+    }
+    
+    .header {
+      margin-bottom: 24px;
+    }
+    
+    .title {
+      font-size: 24px;
+    }
+    
+    .card {
+      padding: 16px;
+    }
+  }
+  
+  /* Initialize Products Button specific styles */
+  .initializeButton {
+    margin-bottom: 24px;
+  }
+  
+  /* Utility classes */
+  .mb4 {
+    margin-bottom: 16px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .visible {
+    display: block;
+  }

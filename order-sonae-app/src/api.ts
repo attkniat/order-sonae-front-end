@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:7137";
+const API_URL = "https://localhost:7137";
 
 export const api = axios.create({
   baseURL: API_URL,
@@ -10,12 +9,18 @@ export const api = axios.create({
 });
 
 export const fetchProducts = async () => {
-  const response = await api.get("/products/get-all");
+  const response = await api.get("/get-all");
   return response.data;
 };
 
+export const getProductById = async (productId: string) => {
+    const response = await api.get(`/${productId}`);
+    return response.data;
+  };
+  
+
 export const initializeProducts = async () => {
-    const response = await api.post("/products/initialize");
+    const response = await api.post("/initialize");
     return response.data;
   };
 
@@ -32,7 +37,15 @@ export const fetchOrder = async (orderId: string) => {
   return response.data;
 };
 
-export const updateOrderStatus = async (orderId: string) => {
-    const response = await api.put(`"/order/${orderId}/update-status`);
-    return response.data;
-  };
+export const updateOrderStatus = async (orderId: string, statusNumber: string) => {
+  const response = await api.put(
+    `/order/update-status`,
+    { statusNumber },
+    {
+      params: {
+        orderId,
+      },
+    }
+  );
+  return response.data;
+};
